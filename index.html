@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Resume Screener</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f1f4f6;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+      text-align: center;
+      color: #333;
+    }
+
+    input[type="file"],
+    input[type="text"],
+    button {
+      width: 100%;
+      padding: 12px;
+      margin: 15px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      background: #fdfdfd;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-top: 30px;
+      color: #333;
+    }
+
+    .score-bar {
+      background: #e9ecef;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 25px;
+      margin-bottom: 20px;
+    }
+
+    .score-fill {
+      background: linear-gradient(90deg, #4caf50, #2196f3);
+      color: #fff;
+      font-weight: bold;
+      height: 100%;
+      text-align: center;
+      line-height: 25px;
+      border-radius: 10px 0 0 10px;
+    }
+
+    .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 10px 0 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .badge.red { background-color: #e74c3c; }
+    .badge.blue { background-color: #3498db; }
+    .badge.green { background-color: #2ecc71; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📄 AI Resume Screener</h2>
+    <form method="POST" enctype="multipart/form-data">
+      <label>Upload Resume (PDF only):</label>
+      <input type="file" name="resume" accept=".pdf" required>
+
+      <label>Target Job Role:</label>
+      <input type="text" name="job_role" placeholder="e.g. Data Analyst" required>
+
+      <button type="submit">Analyze Resume</button>
+    </form>
+
+    {% if result %}
+      <div class="result">
+        <h3>📊 Resume Match Score</h3>
+        <div class="score-bar">
+          <div class="score-fill" style="width: {{ result.score }}%;">
+            {{ result.score }} / 100
+          </div>
+        </div>
+
+        <h4>❌ Missing Skills</h4>
+        {% if result.missing_skills %}
+          <div class="badge-group">
+            {% for skill in result.missing_skills %}
+              <span class="badge red">{{ skill }}</span>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p>✅ None!</p>
+        {% endif %}
+
+        <h4>📜 Recommended Certifications</h4>
+        <div class="badge-group">
+          {% for cert in result.certifications %}
+            <span class="badge blue">{{ cert }}</span>
+          {% endfor %}
+        </div>
+
+        <h4>💼 Suggested Projects / Experience</h4>
+        <div class="badge-group">
+          {% for exp in result.experiences %}
+            <span class="badge green">{{ exp }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

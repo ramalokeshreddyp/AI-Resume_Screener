@@ -1,0 +1,27 @@
+{
+  "skills": [
+    "python",
+    "tensorflow",
+    "keras",
+    "pytorch",
+    "docker",
+    "kubernetes",
+    "machine learning",
+    "deep learning",
+    "model deployment",
+    "ci/cd",
+    "api development"
+  ],
+  "certifications": [
+    "TensorFlow Developer Certificate",
+    "AWS Certified Machine Learning – Specialty",
+    "Google Cloud Professional Machine Learning Engineer"
+  ],
+  "experiences": [
+    "deploying ML models to production",
+    "building data pipelines",
+    "model serving",
+    "scalable data processing",
+    "monitoring model performance"
+  ]
+}

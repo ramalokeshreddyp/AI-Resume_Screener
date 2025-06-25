@@ -1,0 +1,5 @@
+{
+  "skills": ["excel", "python", "sql", "tableau", "power bi", "pandas", "numpy", "data visualization", "data cleaning", "statistics"],
+  "certifications": ["Google Data Analytics", "IBM Data Science", "Microsoft Excel Certification"],
+  "experiences": ["data analysis", "dashboard creation", "report automation", "etl pipelines"]
+}

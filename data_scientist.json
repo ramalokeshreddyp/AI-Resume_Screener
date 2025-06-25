@@ -1,0 +1,28 @@
+{
+  "skills": [
+    "python",
+    "r",
+    "sql",
+    "machine learning",
+    "deep learning",
+    "statistics",
+    "pandas",
+    "numpy",
+    "scikit-learn",
+    "data visualization",
+    "data cleaning",
+    "feature engineering"
+  ],
+  "certifications": [
+    "IBM Data Science Professional Certificate",
+    "Google Professional Data Engineer",
+    "Microsoft Certified: Azure Data Scientist Associate"
+  ],
+  "experiences": [
+    "building predictive models",
+    "data preprocessing",
+    "model evaluation",
+    "time series analysis",
+    "natural language processing"
+  ]
+}

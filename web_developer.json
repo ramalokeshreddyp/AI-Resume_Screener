@@ -1,0 +1,27 @@
+{
+  "skills": [
+    "html",
+    "css",
+    "javascript",
+    "react",
+    "node.js",
+    "express",
+    "bootstrap",
+    "responsive design",
+    "rest api",
+    "git",
+    "webpack"
+  ],
+  "certifications": [
+    "freecodecamp Front End Development",
+    "W3C Front-End Developer",
+    "Coursera Full-Stack Web Development"
+  ],
+  "experiences": [
+    "building responsive websites",
+    "api integration",
+    "ui/ux design",
+    "frontend performance optimization",
+    "cross-browser testing"
+  ]
+}
